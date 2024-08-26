@@ -9,33 +9,44 @@ html {
   font-size: 62.5%; }
 
 body {
+  padding: 3rem; }
+
+/* ANIMATION */
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-10rem);
+    opacity: 0; }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(10rem);
+    opacity: 0; }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
   padding: 3rem; }
-
-/* Header */
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("./../img/hero.jpg");
-  background-size: cover;
-  background-position: left;
-  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -52,6 +63,16 @@ body {
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: 1.74rem; }
+
+.move-in-bottom {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards; }
+
+.move-in-left {
+  animation: moveInLeft 1s ease-in-out; }
+
+.move-in-right {
+  animation: moveInRight 1s ease-in-out; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -91,42 +112,23 @@ body {
   .btn--white::after {
     background-color: #fff; }
 
-/* ANIMATION */
-@keyframes moveInLeft {
-  0% {
-    transform: translateX(-10rem);
-    opacity: 0; }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-/* Animation */
-@keyframes moveInRight {
-  0% {
-    transform: translateX(10rem);
-    opacity: 0; }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    transform: translateY(3rem);
-    opacity: 0; }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-.move-in-bottom {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; }
-
-.move-in-left {
-  animation: moveInLeft 1s ease-in-out; }
-
-.move-in-right {
-  animation: moveInRight 1s ease-in-out; }
+/* Header */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("./../img/hero.jpg");
+  background-size: cover;
+  background-position: left;
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }

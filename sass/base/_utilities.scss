@@ -1,0 +1,12 @@
+.move-in-bottom {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+.move-in-left {
+  animation: moveInLeft 1s ease-in-out;
+}
+
+.move-in-right {
+  animation: moveInRight 1s ease-in-out;
+}
